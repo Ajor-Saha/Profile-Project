@@ -10,7 +10,7 @@ const ProjectPage = () => {
     const fetchProject = async () => {
       try {
         const response = await axios.get(
-          `/api/project/getProjectById/${projectId}`
+          `https://profile-project-api.vercel.app/api/project/getProjectById/${projectId}`
         );
         setProject(response.data.data);
       } catch (error) {

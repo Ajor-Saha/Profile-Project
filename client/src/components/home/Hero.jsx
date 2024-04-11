@@ -36,7 +36,7 @@ const Hero = () => {
             innovation with functionality to deliver exceptional results. Let's
             build something amazing together!
           </p>
-          <button className="btn btn-primary">Check Resume</button>
+          <a href="https://drive.google.com/file/d/1vBWyZ2rVg8ZlQ6tkc1gMZkBEHKg7a5rF/view?usp=sharing" target="_blank" className="btn btn-primary">Check Resume</a>
         </div>
       </div>
     </div>
