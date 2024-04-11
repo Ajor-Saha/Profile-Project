@@ -19,7 +19,7 @@ const Contact = () => {
     try {
       setSuccessMessage("");
       setLoading(true);
-      const res = await axios.post("/api/contact/createContact", JSON.stringify(formData), {
+      const res = await axios.post("https://profile-project-api.vercel.app/api/contact/createContact", JSON.stringify(formData), {
         headers: {
           "Content-Type": "application/json",
         },

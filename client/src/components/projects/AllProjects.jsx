@@ -8,7 +8,7 @@ const AllProjects = ({ category }) => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await axios.get(`/api/project/getProjectByCategory?category=${category}`);
+        const response = await axios.get(`https://profile-project-api.vercel.app/api/project/getProjectByCategory?category=${category}`);
         setProjects(response.data.data);
       } catch (error) {
         console.error("Error fetching projects:", error);

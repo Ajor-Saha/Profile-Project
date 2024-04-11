@@ -27,7 +27,7 @@ const DashSidebar = () => {
 
   const handleSignOut =async () => {
     try {
-      const response = await fetch("/api/users/logout", {
+      const response = await fetch("https://profile-project-api.vercel.app/api/users/logout", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${accessToken}`, // Include the access token in the request headers

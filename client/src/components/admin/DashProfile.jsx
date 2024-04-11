@@ -28,7 +28,7 @@ const DashProfile = () => {
     e.preventDefault();
     try {
       dispatch(updateStart());
-      const res = await fetch("/api/users/update-account", {
+      const res = await fetch("https://profile-project-api.vercel.app/api/users/update-account", {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

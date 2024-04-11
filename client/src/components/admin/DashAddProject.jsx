@@ -60,7 +60,7 @@ const DashAddProject = () => {
     try {
       setLoading(true);
       setMessage("");
-      const response = await axios.post("/api/project/addProject", formDataToSend, {
+      const response = await axios.post("https://profile-project-api.vercel.app/api/project/addProject", formDataToSend, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
           "Content-Type": "multipart/form-data",

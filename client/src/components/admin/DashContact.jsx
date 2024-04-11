@@ -1,16 +1,22 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Table } from 'flowbite-react';
+import { useSelector } from 'react-redux';
 
 const DashContact = () => {
   const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(false);
-
+  const { accessToken } = useSelector((state) => state.user);
+  
   useEffect(() => {
     const fetchContacts = async () => {
       try {
         setLoading(true);
-        const res = await axios.get('/api/contact/getAllContacts');
+        const res = await axios.get('https://profile-project-api.vercel.app/api/contact/getallContacts', {
+          headers: {
+            Authorization: `Bearer ${accessToken}`
+          }
+        });
         setContacts(res.data.data);
         setLoading(false);
       } catch (error) {
@@ -18,6 +24,7 @@ const DashContact = () => {
         setLoading(false);
       }
     };
+    
 
     fetchContacts();
   }, []);

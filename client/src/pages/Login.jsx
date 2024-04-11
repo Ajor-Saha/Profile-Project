@@ -24,7 +24,7 @@ const Login = () => {
       setMessage("");
       dispatch(signInStart());
       const res = await axios.post(
-        "/api/users/login",
+        "https://profile-project-api.vercel.app/api/users/login",
         JSON.stringify(formData), // Serialize form data
         {
           headers: {

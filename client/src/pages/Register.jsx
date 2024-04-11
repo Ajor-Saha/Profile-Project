@@ -21,7 +21,7 @@ const Register = () => {
     try {
       setSuccessMessage("");
       setLoading(true);
-      const res = await axios.post("/api/users/register", JSON.stringify(formData), {
+      const res = await axios.post("https://profile-project-api.vercel.app/api/users/register", JSON.stringify(formData), {
         headers: {
           "Content-Type": "application/json",
         },
