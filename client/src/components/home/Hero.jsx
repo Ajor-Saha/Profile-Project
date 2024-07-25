@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import  { useEffect, useRef } from "react";
 import avatar from "../../assets/avatar.avif";
 import Typewriter from "typewriter-effect";
 
@@ -10,7 +10,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="hero min-h-screen bg-base-200 py-32 dark:text-gray-50 dark:bg-[#111827]" id="about">
+    <div className="hero min-h-screen bg-base-200 py-32 dark:text-gray-50 dark:bg-[#111827] w-full" id="about">
       <div className="hero-content flex-col lg:flex-row-reverse gap-7">
         <img src={avatar} className="max-w-sm rounded-lg shadow-2xl w-1/2 lg:ml-10" />
         <div className="w-1/2">

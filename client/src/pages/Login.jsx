@@ -51,12 +51,12 @@ const Login = () => {
 
 
   return (
-    <div className="py-32 bg-orange-50 dark:bg-[#111827] flex flex-col justify-center items-center">
+    <div className="py-32 min-h-screen bg-orange-50 dark:bg-[#111827] flex flex-col justify-center items-center">
       <div>
         <h1 className="text-2xl font-bold py-5">Login <span className="font-semibold text-sm">(Admin only)</span></h1>
       </div>
       <div>
-        <Card className="w-96 md:w-[600px] flex flex-col px-5 py-2">
+        <Card className="w-[350px] md:w-[600px] flex flex-col px-5 py-2">
           <form onSubmit={handleSubmit}>
             <div className="max-w-md py-2">
               <div className="mb-2 block">

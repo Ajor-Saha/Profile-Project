@@ -50,7 +50,7 @@ const Contact = () => {
         </p>
       </div>
       <div className="py-5">
-        <Card className="w-96 md:w-[600px] px-5 py-2">
+        <Card className="w-[330px] md:w-[600px] px-5 py-2">
           <form onSubmit={handleSubmit} className="gap-5 flex flex-col">
             <div className="max-w-md">
               <div className="mb-2 block">

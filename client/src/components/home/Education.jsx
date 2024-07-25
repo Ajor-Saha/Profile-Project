@@ -18,7 +18,7 @@ const Education = () => {
           foster a well-rounded understanding of technology.
         </p>
       </div>
-      <div className="h-[350px] sm:h-80 xl:h-80 2xl:h-96 md:w-[600px] lg:w-[900px] w-[450px] sm:w-[500px]">
+      <div className="h-[500px] sm:h-80 xl:h-80 2xl:h-96 md:w-[600px] lg:w-[900px] w-[350px] sm:w-[400px]">
         <Carousel>
           <div className="flex flex-col h-full bg-gray-400 dark:bg-gray-700 dark:text-white gap-5  justify-center items-center">
             <div className="flex">
@@ -50,7 +50,7 @@ const Education = () => {
                 ever-evolving tech landscape.
               </p>
               <p>
-                <span className="font-semibold">Duration</span>: March-2021 - Jan-2026
+                <span className="font-semibold">Duration</span>: March-2022 - Jan-2026
               </p>
             </div>
           </div>

@@ -1,7 +1,6 @@
-import React from 'react';
 import SkillCard from '../utils/SkillCard';
-import { FaReact, FaCss3Alt, FaJs, FaHtml5, FaDatabase } from 'react-icons/fa'; // Import icons from Font Awesome
-import { SiRedux, SiTailwindcss, SiMongodb, SiMysql, SiFirebase,SiExpress, SiDocker, SiGit, SiGithub, SiPostman, SiVisualstudiocode, SiVercel, SiCplusplus, SiC, SiDatacamp, SiJavascript  } from 'react-icons/si';
+import { FaReact, FaCss3Alt, FaHtml5, FaDatabase } from 'react-icons/fa'; // Import icons from Font Awesome
+import { SiRedux, SiTailwindcss, SiMongodb, SiMysql, SiFirebase,SiExpress, SiDocker, SiGit, SiGithub, SiPostman, SiVisualstudiocode, SiVercel, SiCplusplus, SiC, SiJavascript, SiPostgresql  } from 'react-icons/si';
 import { TbBrandNextjs } from "react-icons/tb";
 import { DiJava, DiNodejs } from "react-icons/di";
 
@@ -21,7 +20,7 @@ const backendData = [
     { text: "Express Js", icon: SiExpress},
     { text: "MongoDB", icon: SiMongodb }, // Use FaHtml5 from Font Awesome
     { text: "MySQL", icon: SiMysql },
-    { text: "Firebase", icon: SiFirebase },
+    { text: "Postgresql", icon: SiPostgresql },
 ];
 
 const ProgrammingData = [
@@ -46,7 +45,7 @@ const Skills = () => {
     <div className='py-16 flex flex-col  justify-center items-center px-10 bg-orange-50 dark:text-gray-50 dark:bg-[#101214]' id="skills">
       <h1 className='text-center text-3xl font-bold py-5'>Skills</h1>
       <p className='text-sm px-10 font-semibold py-2'>As a full stack developer, I possess a versatile skill set encompassing both front-end and back-end technologies, enabling me to craft dynamic and comprehensive web solutions.</p>
-      <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 justify-center items-center gap-10 lg:gap-20 py-5'>
+      <div className='flex flex-wrap justify-center items-center gap-10 lg:gap-20 py-5'>
         <SkillCard skills={frontendData} heading="Frontend"/>
         <SkillCard skills={backendData} heading="Backend"/>
         <SkillCard skills={ProgrammingData} heading="Programming"/>

@@ -8,7 +8,7 @@ import Contact from '../components/home/Contact'
 
 const Home = () => {
   return (
-    <div>
+    <div className='w-full'>
       <Hero />
       <Skills />
       <Projects />
