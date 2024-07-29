@@ -1,9 +1,9 @@
 import { Button, Card, Label, TextInput, Textarea } from "flowbite-react";
-import React, { useState } from "react";
+import  { useState } from "react";
 import { HiMail } from "react-icons/hi";
-import { SiNamecheap } from "react-icons/si";
 import { CgProfile } from "react-icons/cg";
 import axios from "axios";
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({});

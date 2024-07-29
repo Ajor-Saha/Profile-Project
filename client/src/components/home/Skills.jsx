@@ -1,6 +1,6 @@
 import SkillCard from '../utils/SkillCard';
 import { FaReact, FaCss3Alt, FaHtml5, FaDatabase } from 'react-icons/fa'; // Import icons from Font Awesome
-import { SiRedux, SiTailwindcss, SiMongodb, SiMysql, SiFirebase,SiExpress, SiDocker, SiGit, SiGithub, SiPostman, SiVisualstudiocode, SiVercel, SiCplusplus, SiC, SiJavascript, SiPostgresql  } from 'react-icons/si';
+import { SiRedux, SiTailwindcss, SiMongodb, SiMysql, SiExpress, SiDocker, SiGit, SiGithub, SiPostman, SiVisualstudiocode, SiVercel, SiCplusplus, SiC, SiJavascript, SiPostgresql  } from 'react-icons/si';
 import { TbBrandNextjs } from "react-icons/tb";
 import { DiJava, DiNodejs } from "react-icons/di";
 
