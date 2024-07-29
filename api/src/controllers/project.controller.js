@@ -4,6 +4,9 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import { uploadOnCloudinary } from "../utils/cloudinary.js";
 import { ApiError } from "../utils/ApiError.js";
 import mongoose from "mongoose";
+import { uploadToCloudinary } from "../utils/uploadToCloudinary.js";
+
+
 
 const addProject = asyncHandler(async (req, res) => {
   if (!req.user.isAdmin) {
@@ -28,8 +31,7 @@ const addProject = asyncHandler(async (req, res) => {
   ) {
     throw new ApiError(401, "All fields are required");
   }
-  
-  //console.log(category);
+
   // Validate category
   const allowedCategories = ["full-stack", "mern-stack", "frontend", "backend"];
   if (!allowedCategories.includes(category)) {
@@ -37,25 +39,27 @@ const addProject = asyncHandler(async (req, res) => {
   }
 
   // Handle project images
-  const projectImagesLocalPaths = req.files?.projectImages?.map(
-    (file) => file.path
-  );
-
-  if (!projectImagesLocalPaths || projectImagesLocalPaths.length === 0) {
+  if (!req.files || req.files.length === 0) {
     throw new ApiError(400, "Project images are required");
   }
 
   // Upload project images to Cloudinary and get URLs
   const projectImages = await Promise.all(
-    projectImagesLocalPaths.map(async (localPath) => {
-      const cloudinaryResponse = await uploadOnCloudinary(localPath);
-      return cloudinaryResponse ? cloudinaryResponse.secure_url : null;
+    req.files.map(async (file) => {
+      const fileBuffer = file.buffer;
+      const mimeType = file.mimetype;
+      const base64Data = Buffer.from(fileBuffer).toString("base64");
+      const fileUri = `data:${mimeType};base64,${base64Data}`;
+
+      const cloudinaryResponse = await uploadToCloudinary(fileUri, file.originalname);
+
+      if (!cloudinaryResponse.success) {
+        throw new ApiError(400, "Failed to upload one or more project images");
+      }
+
+      return cloudinaryResponse.result.secure_url;
     })
   );
-
-  if (projectImages.some((image) => !image)) {
-    throw new ApiError(400, "Failed to upload one or more project images");
-  }
 
   // Add project to database
   const newProject = await Project.create({
@@ -74,6 +78,8 @@ const addProject = asyncHandler(async (req, res) => {
     .status(201)
     .json(new ApiResponse(200, newProject, "Project added successfully"));
 });
+
+
 
 const getProjectByCategory = asyncHandler(async (req, res) => {
   const { category } = req.query;
