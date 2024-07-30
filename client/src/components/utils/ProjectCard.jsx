@@ -1,7 +1,7 @@
 import { Button } from "flowbite-react";
-import React from "react";
 import { Link } from "react-router-dom";
 
+// eslint-disable-next-line react/prop-types
 const ProjectCard = ({ project }) => {
   let frontendTech, backendTech1, backendTech2;
    
