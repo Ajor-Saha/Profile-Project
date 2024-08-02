@@ -9,17 +9,17 @@ const experienceData = [
     heading: "Code Samurai Hacthons",
     title: "Project Link",
     description:
-      "In the 2024 Code Samurai hackathons, I collaborated within a team,showcasing my skills in diverse domains. During the preliminary round,I developed a REST API for train management, demonstrating proficiencyin backend technologies. In the subsequent round, I engineered a full-stack web application for waste management in Dhaka City,underscoring my prowess in end-to-end project execution",
+      "In the 2024 Code Samurai hackathon, I collaborated within a team, showcasing my skills in diverse domains. During the preliminary round, I developed a REST API for train management, demonstrating proficiency in backend technologies. In the subsequent round, I engineered a full-stack web application for waste management in Dhaka City, underscoring my prowess in end-to-end project execution. After qualifying for the final round, we implemented an extension of the second round's problem set, further enhancing the full-stack web application.",
     img: codeSam,
     date: "2024",
     links: [
       {
-        title: "Second Round",
+        title: "Code",
         url: "https://github.com/Ajor-Saha/cs24-p2-Team_Nande",
       },
       {
-        title: "Preliminary Round",
-        url: "https://github.com/Ajor-Saha/CodeSam-Preliminary-Contest-2024",
+        title: "LiveApp",
+        url: "https://cs24-p2-team-nande-rvfw.vercel.app/",
       },
     ],
   },
