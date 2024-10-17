@@ -3,6 +3,7 @@ import { FaReact, FaCss3Alt, FaHtml5, FaDatabase } from 'react-icons/fa'; // Imp
 import { SiRedux, SiTailwindcss, SiMongodb, SiMysql, SiExpress, SiDocker, SiGit, SiGithub, SiPostman, SiVisualstudiocode, SiVercel, SiCplusplus, SiC, SiJavascript, SiPostgresql  } from 'react-icons/si';
 import { TbBrandNextjs } from "react-icons/tb";
 import { DiJava, DiNodejs } from "react-icons/di";
+import { SiTypescript } from "react-icons/si";
 
 
 const frontendData = [
@@ -27,8 +28,10 @@ const ProgrammingData = [
     { text: "Java", icon: DiJava },
     { text: "C++", icon: SiCplusplus},
     { text: "C", icon: SiC},
+    { text: "TypeScript", icon: SiTypescript },
     { text: "Data Structure", icon: FaDatabase},
     { text: "Algorithm", icon: FaDatabase },
+    
 ];
 
 const othersData = [

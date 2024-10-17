@@ -1,8 +1,7 @@
-import React from "react";
 import ExperienceCard from "../utils/ExperienceCard";
 import codeSam from "../../assets/CodeSam.png";
-import projectCommerce from "../../assets/E-com.png"
-import Cp from "../../assets/Cp.png"
+import Cp from "../../assets/Cp.png";
+import welth from "../../assets/welthPic.jpg";
 
 const experienceData = [
   {
@@ -24,14 +23,21 @@ const experienceData = [
     ],
   },
   {
-    heading: "E-commerce-Project",
+    heading: "Hack4Good Virtual Hackathon",
     title: "Project Link",
     description:
-      "FashionFleet is a full-stack web application built with MERN stack, providing users with a seamless shopping experience for clothes. It features user authentication, responsive web design, dark mode/light mode, sections for different clothing categories (men, women, kids), sections for new arrivals and shopping list, advanced search functionality, payment gateway integration with Stripe, user profile management, and an admin dashboard for managing products, orders, users, and comments.",
-    img: projectCommerce,
-    date: "5/2/2024-20/3/2024",
+      "WealthLens was inspired by the need for a user-friendly platform that helps individuals take control of their finances. Many people struggle with budgeting, tracking expenses, and staying updated on investments, so I developed WealthLens to bring all these tools together in one accessible dashboard. With AI-driven insights, users can monitor their financial status, make informed decisions, and optimize spending habits. This project, built during the Hack4Good Virtual Hackathon on Devpost, aims to empower users to build better financial habits and achieve their savings goals effortlessly.",
+    img: welth,
+    date: "8/8/2024-15/9/2024",
     links: [
-      { title: "FashionFleet", url: "https://github.com/Ajor-Saha/E-commerce-App" },
+      {
+        title: "Code",
+        url: "https://github.com/Ajor-Saha/Hack4Good-Fintech-Hackathon",
+      },
+      {
+        title: "View on Devpost",
+        url: "https://devpost.com/software/wealthlens"
+      }
     ],
   },
   {
@@ -57,7 +63,7 @@ const Experience = () => {
         <span className="border-b-4 border-blue-950 dark:border-blue-400 w-40"></span>
         <p className="lg:px-10 font-serif ml-2 py-2">
           Throughout my journey as a{" "}
-          <span className="font-semibold">full stack developer</span>, I've
+          <span className="font-semibold">full stack developer</span>, I&apos;ve
           spearheaded projects from conceptualization to deployment,
           demonstrating expertise in both front-end and back-end development.{" "}
           <span className="font-semibold">Engaging in hackathons</span>, I
@@ -72,7 +78,7 @@ const Experience = () => {
         </p>
       </div>
       <div className="py-5 gap-10">
-      {experienceData.map((experience, index) => (
+        {experienceData.map((experience, index) => (
           <ExperienceCard key={index} data={experience} />
         ))}
       </div>
