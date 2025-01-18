@@ -4,31 +4,33 @@ import { SiRedux, SiTailwindcss, SiMongodb, SiMysql, SiExpress, SiDocker, SiGit,
 import { TbBrandNextjs } from "react-icons/tb";
 import { DiJava, DiNodejs } from "react-icons/di";
 import { SiTypescript } from "react-icons/si";
-
+import { SiFramework } from "react-icons/si";
+import { FaSquareGitlab } from "react-icons/fa6";
 
 const frontendData = [
   { text: "React.js", icon: FaReact },
+  { text: "Next.js", icon: TbBrandNextjs },
   { text: "Redux", icon: SiRedux},
   { text: "HTML5", icon: FaHtml5 }, // Use FaHtml5 from Font Awesome
   { text: "CSS3", icon: FaCss3Alt },
   { text: "Tailwind CSS", icon: SiTailwindcss },
-  { text: "JavaScript", icon: SiJavascript },
-  { text: "Next.js", icon: TbBrandNextjs },
 ];
 
 const backendData = [
     { text: "Node Js", icon: DiNodejs },
     { text: "Express Js", icon: SiExpress},
+    { text: "Hono", icon: SiFramework},
+    { text: "Postgresql", icon: SiPostgresql },
     { text: "MongoDB", icon: SiMongodb }, // Use FaHtml5 from Font Awesome
     { text: "MySQL", icon: SiMysql },
-    { text: "Postgresql", icon: SiPostgresql },
 ];
 
 const ProgrammingData = [
+    { text: "TypeScript", icon: SiTypescript },
+    { text: "JavaScript", icon: SiJavascript },
     { text: "Java", icon: DiJava },
     { text: "C++", icon: SiCplusplus},
     { text: "C", icon: SiC},
-    { text: "TypeScript", icon: SiTypescript },
     { text: "Data Structure", icon: FaDatabase},
     { text: "Algorithm", icon: FaDatabase },
     
@@ -38,6 +40,7 @@ const othersData = [
     { text: "Docker", icon: SiDocker },
     { text: "Git", icon: SiGit },
     { text: "Github", icon: SiGithub }, // Use FaHtml5 from Font Awesome
+    { text: "GitLab", icon: FaSquareGitlab },
     { text: "Vercel", icon: SiVercel },
     { text: "Postman", icon: SiPostman },
     { text: "VS Code", icon: SiVisualstudiocode },
