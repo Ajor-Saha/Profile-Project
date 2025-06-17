@@ -1,15 +1,16 @@
 import { Button, Card, Label, TextInput } from "flowbite-react";
-import React, { useState } from "react";
+import { useState } from "react";
 import { HiMail } from "react-icons/hi";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { signInFailure, signInStart, signInSuccess } from "../redux/user/userSlice";
 import axios from "axios";
+import { BASE_URL } from "../config";
 
 const Login = () => {
   const [formData, setFormData] = useState({});
-  const { loading, error } = useSelector((state) => state.user);
+  const { loading } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [message, setMessage] = useState("");
@@ -24,7 +25,7 @@ const Login = () => {
       setMessage("");
       dispatch(signInStart());
       const res = await axios.post(
-        "https://profile-project-api.vercel.app/api/users/login",
+        `${BASE_URL}/api/users/login`,
         JSON.stringify(formData), // Serialize form data
         {
           headers: {

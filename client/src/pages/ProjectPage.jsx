@@ -1,6 +1,7 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import{ useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { BASE_URL } from "../config";
 
 const ProjectPage = () => {
   const { projectId } = useParams();
@@ -10,7 +11,7 @@ const ProjectPage = () => {
     const fetchProject = async () => {
       try {
         const response = await axios.get(
-          `https://profile-project-api.vercel.app/api/project/getProjectById/${projectId}`
+          `${BASE_URL}/api/project/getProjectById/${projectId}`
         );
         setProject(response.data.data);
       } catch (error) {

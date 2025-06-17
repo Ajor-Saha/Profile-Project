@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 
 const ExperienceCard = ({data}) => {
   return (
@@ -30,6 +30,22 @@ const ExperienceCard = ({data}) => {
       </div>
     </div>
   );
+};
+
+ExperienceCard.propTypes = {
+  data: PropTypes.shape({
+    img: PropTypes.string.isRequired,
+    heading: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    links: PropTypes.arrayOf(
+      PropTypes.shape({
+        url: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired
+      })
+    ).isRequired
+  }).isRequired
 };
 
 export default ExperienceCard;

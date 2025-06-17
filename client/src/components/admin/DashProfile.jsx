@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Avatar} from "flowbite-react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -6,8 +6,9 @@ import {
   updateStart,
   updateSuccess,
 } from "../../redux/user/userSlice";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import avatar from "../../assets/avatar.avif"
+import { BASE_URL } from "../../config";
 
 const DashProfile = () => {
   const { currentUser, error, loading, accessToken } = useSelector(
@@ -15,7 +16,7 @@ const DashProfile = () => {
   );
 
   const [formData, setFormData] = useState({});
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -28,7 +29,7 @@ const DashProfile = () => {
     e.preventDefault();
     try {
       dispatch(updateStart());
-      const res = await fetch("https://profile-project-api.vercel.app/api/users/update-account", {
+      const res = await fetch(`${BASE_URL}/api/users/update-account`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

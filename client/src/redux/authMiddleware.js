@@ -8,6 +8,9 @@ const authMiddleware = (store) => (next) => (action) => {
     if (action.type === "user/signOut") {
       localStorage.removeItem("accessToken"); // Remove the token from local storage upon sign-out
     }
+
+    console.log(store);
+    
   
     return next(action);
   };

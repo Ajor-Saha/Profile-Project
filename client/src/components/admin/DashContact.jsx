@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Table } from 'flowbite-react';
 import { useSelector } from 'react-redux';
+import { BASE_URL } from '../../config';
 
 const DashContact = () => {
   const [contacts, setContacts] = useState([]);
@@ -12,7 +13,7 @@ const DashContact = () => {
     const fetchContacts = async () => {
       try {
         setLoading(true);
-        const res = await axios.get('https://profile-project-api.vercel.app/api/contact/getallContacts', {
+        const res = await axios.get(`${BASE_URL}/api/contact/getallContacts`, {
           headers: {
             Authorization: `Bearer ${accessToken}`
           }
@@ -27,7 +28,7 @@ const DashContact = () => {
     
 
     fetchContacts();
-  }, []);
+  }, [accessToken]);
 
   return (
     <div className="table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500">

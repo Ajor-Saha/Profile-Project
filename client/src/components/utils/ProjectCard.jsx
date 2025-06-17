@@ -1,5 +1,6 @@
 import { Button } from "flowbite-react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 // eslint-disable-next-line react/prop-types
 const ProjectCard = ({ project }) => {
@@ -47,10 +48,10 @@ const ProjectCard = ({ project }) => {
           <Button gradientDuoTone="cyanToBlue">{backendTech2}</Button>
         </Button.Group>
         <div className="flex justify-evenly">
-          <a href={project.sourceCode} target="_blank" className="link link-primary dark:text-white">
+          <a href={project.sourceCode} target="_blank" rel="noreferrer" className="link link-primary dark:text-white">
             Code
           </a>
-          <a href={project.liveWebsiteLink} target="_blank" className="link link-primary dark:text-white">
+          <a href={project.liveWebsiteLink} target="_blank" rel="noreferrer" className="link link-primary dark:text-white">
             LiveApp
           </a>
         </div>
@@ -61,6 +62,20 @@ const ProjectCard = ({ project }) => {
       </div>
     </div>
   );
+};
+
+ProjectCard.propTypes = {
+  project: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    frontendStack: PropTypes.arrayOf(PropTypes.string).isRequired,
+    backendStack: PropTypes.arrayOf(PropTypes.string).isRequired,
+    projectImages: PropTypes.arrayOf(PropTypes.string).isRequired,
+    sourceCode: PropTypes.string.isRequired,
+    liveWebsiteLink: PropTypes.string.isRequired
+  }).isRequired
 };
 
 export default ProjectCard;

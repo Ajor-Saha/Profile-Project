@@ -1,7 +1,5 @@
 import { Sidebar } from "flowbite-react";
-import { HiUser, HiArrowSmRight, HiDocumentText, HiOutlineUserGroup, HiChartPie, HiAnnotation } from "react-icons/hi";
-import { MdOutlineProductionQuantityLimits } from "react-icons/md";
-import { RiMoneyDollarCircleLine } from "react-icons/ri";
+import {  HiArrowSmRight, HiChartPie, HiUser,  } from "react-icons/hi";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -9,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "../../redux/user/userSlice";
 import { GrProjects } from "react-icons/gr";
 import { IoMdContacts } from "react-icons/io";
+import { BASE_URL } from "../../config";
 
 const DashSidebar = () => {
   const location = useLocation();
@@ -27,7 +26,7 @@ const DashSidebar = () => {
 
   const handleSignOut =async () => {
     try {
-      const response = await fetch("https://profile-project-api.vercel.app/api/users/logout", {
+      const response = await fetch(`${BASE_URL}/api/users/logout`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${accessToken}`, // Include the access token in the request headers

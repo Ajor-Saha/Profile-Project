@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "flowbite-react";
+import PropTypes from "prop-types";
 
-// eslint-disable-next-line react/prop-types
 const SkillCard = ({ skills, heading }) => {
   return (
     <div className="flex flex-col h-auto lg:h-[480px]   dark:border-gray-700 dark:bg-gray-900 bg-slate-50 w-[350px] lg:w-[450px] gap-5 border-2 shadow-xl rounded-xl py-10 px-8   cursor-pointer transform-gpu transition-transform duration-400 hover:-translate-y-2 hover:shadow-lg">
@@ -19,6 +19,16 @@ const SkillCard = ({ skills, heading }) => {
       </div>
     </div>
   );
+};
+
+SkillCard.propTypes = {
+  skills: PropTypes.arrayOf(
+    PropTypes.shape({
+      icon: PropTypes.func.isRequired,
+      text: PropTypes.string.isRequired
+    })
+  ).isRequired,
+  heading: PropTypes.string.isRequired
 };
 
 export default SkillCard;

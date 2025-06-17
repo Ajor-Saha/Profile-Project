@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import DashSidebar from "../components/admin/DashSidebar";
 import DashProfile from "../components/admin/DashProfile";
@@ -7,10 +6,10 @@ import DashAddProject from "../components/admin/DashAddProject";
 import DashContact from "../components/admin/DashContact";
 
 const Dashboard = () => {
-  const dispatch = useDispatch();
-  const { currentUser, loading, error, accessToken } = useSelector(
-    (state) => state.user
-  ); // Access accessToken from the Redux store
+  //const dispatch = useDispatch();
+  //const { currentUser, loading, error, accessToken } = useSelector(
+  //  (state) => state.user
+  //); // Access accessToken from the Redux store
 
   const location = useLocation();
   const [tab, setTab] = useState("");

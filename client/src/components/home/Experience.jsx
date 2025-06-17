@@ -10,7 +10,7 @@ const experienceData = [
     description:
       "I am working as a Full Stack Developer at Peacock India Developer Team, where I design and implement RESTful APIs, build robust frontend and backend systems, and contribute to AI-powered products. I focus on creating efficient, scalable solutions for complex applications while ensuring seamless integration between all components. My tech stack includes React.js, Next.js for frontend development, and Node.js with frameworks like Express and Hono for backend development. I also work with PostgreSQL for database management.",
     img: fullStack,
-    date: "2/12/2024",
+    date: "2/12/2024-31/05/2025",
     links: [{ title: "Website", url: "https://www.peacockindia.in/" }],
   },
   {

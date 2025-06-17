@@ -1,13 +1,9 @@
 import { Tabs } from "flowbite-react";
-import React, { useEffect, useState } from "react";
-import { HiAdjustments, HiClipboardList, HiUserCircle } from "react-icons/hi";
 import { FaStackExchange } from "react-icons/fa";
 import { GoStack } from "react-icons/go";
-import { MdFrontHand } from "react-icons/md";
 import { LiaNode } from "react-icons/lia";
 import { TbBrandReact } from "react-icons/tb";
 import AllProjects from "../projects/AllProjects";
-import axios from "axios";
 
 const Projects = () => {
   

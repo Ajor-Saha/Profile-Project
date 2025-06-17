@@ -1,17 +1,16 @@
-import React from "react";
+
 import { IoLogoGithub } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import { FaCode, FaMoon, FaSun } from "react-icons/fa6";
+import { FaCode, FaMoon,  } from "react-icons/fa6";
 import { IoIosLogIn } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
-import { Avatar, Button } from "flowbite-react";
 import { toggleTheme } from "../../redux/theme/themeSlice";
 import { HiSun } from "react-icons/hi";
-import { LuMoonStar } from "react-icons/lu";
+import avatar from "../../assets/avatar.avif"
 
 
 const Header = () => {
-  const { currentUser, loading, error, accessToken } = useSelector(
+  const { currentUser } = useSelector(
     (state) => state.user
   );
 
@@ -94,7 +93,7 @@ const Header = () => {
           <Link to="/dashboard" className="px-2">
             <div className="avatar">
               <div className="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                <img src={avatar} alt="profile" />
               </div>
             </div>
           </Link>

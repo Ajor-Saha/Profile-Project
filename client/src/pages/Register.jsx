@@ -1,10 +1,11 @@
 import { Button, Card, Label, TextInput } from "flowbite-react";
-import React, { useState } from "react";
+import { useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { HiMail } from "react-icons/hi";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { BASE_URL } from "../config";
 
 const Register = () => {
   const [formData, setFormData] = useState({});
@@ -21,7 +22,7 @@ const Register = () => {
     try {
       setSuccessMessage("");
       setLoading(true);
-      const res = await axios.post("https://profile-project-api.vercel.app/api/users/register", JSON.stringify(formData), {
+      const res = await axios.post(`${BASE_URL}/api/users/register`, JSON.stringify(formData), {
         headers: {
           "Content-Type": "application/json",
         },
@@ -29,7 +30,7 @@ const Register = () => {
       console.log(res.data);
       setLoading(false);
       if (res.success === false) {
-        setError(true);
+        //setError(true);
         setSuccessMessage(res.message)
         return;
       }

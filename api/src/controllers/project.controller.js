@@ -92,11 +92,13 @@ const getProjectByCategory = asyncHandler(async (req, res) => {
   // Fetch projects based on category
   let projects;
   if (category === 'full-stack') {
-    // Combine projects from full-stack and mern-stack categories
-    projects = await Project.find({ $or: [{ category: 'full-stack' }, { category: 'mern-stack' }] });
+    // Combine projects from full-stack and mern-stack categories and sort by date
+    projects = await Project.find({ $or: [{ category: 'full-stack' }, { category: 'mern-stack' }] })
+      .sort({ createdAt: -1 }); // -1 for descending order (newest first)
   } else {
-    // Fetch projects based on the specified category
-    projects = await Project.find({ category });
+    // Fetch projects based on the specified category and sort by date
+    projects = await Project.find({ category })
+      .sort({ createdAt: -1 }); // -1 for descending order (newest first)
   }
 
   return res

@@ -7,7 +7,6 @@ import {
   TextInput,
   Textarea,
 } from "flowbite-react";
-import React, { useState } from "react";
 import { GoProjectRoadmap } from "react-icons/go";
 import { GrReactjs } from "react-icons/gr";
 import { FaNode } from "react-icons/fa";
@@ -15,6 +14,8 @@ import { FaCode } from "react-icons/fa";
 import { CgWebsite } from "react-icons/cg";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import { useState } from "react";
+import { BASE_URL } from "../../config";
 
 const DashAddProject = () => {
   const [loading, setLoading] = useState(false);
@@ -60,7 +61,7 @@ const DashAddProject = () => {
     try {
       setLoading(true);
       setMessage("");
-      const response = await axios.post("https://profile-project-api.vercel.app/api/project/addProject", formDataToSend, {
+      const response = await axios.post(`${BASE_URL}/api/project/addProject`, formDataToSend, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
           "Content-Type": "multipart/form-data",

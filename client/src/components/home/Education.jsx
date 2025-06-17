@@ -1,5 +1,4 @@
 import { Carousel } from "flowbite-react";
-import React from "react";
 import sust2 from "../../assets/sust2.png";
 import ideal from "../../assets/ideal.png";
 

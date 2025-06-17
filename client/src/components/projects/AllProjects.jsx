@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import ProjectCard from '../utils/ProjectCard'
 import axios from 'axios';
+import PropTypes from 'prop-types';
+import { BASE_URL } from '../../config';
 
 const AllProjects = ({ category }) => {
   const [projects, setProjects] = useState([]);
@@ -8,7 +10,7 @@ const AllProjects = ({ category }) => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await axios.get(`https://profile-project-api.vercel.app/api/project/getProjectByCategory?category=${category}`);
+        const response = await axios.get(`${BASE_URL}/api/project/getProjectByCategory?category=${category}`);
         setProjects(response.data.data);
       } catch (error) {
         console.error("Error fetching projects:", error);
@@ -26,6 +28,10 @@ const AllProjects = ({ category }) => {
       ))}
     </div>
   )
+}
+
+AllProjects.propTypes = {
+  category: PropTypes.string.isRequired
 }
 
 export default AllProjects
