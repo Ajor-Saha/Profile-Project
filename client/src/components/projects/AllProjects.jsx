@@ -1,4 +1,4 @@
-import  { useEffect, useState } from 'react'
+import  { useEffect, useState, useCallback } from 'react'
 import ProjectCard from '../utils/ProjectCard'
 import axios from 'axios';
 import PropTypes from 'prop-types';
@@ -27,21 +27,21 @@ const AllProjects = ({ category }) => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchProjects = async () => {
-      setLoading(true);
-      try {
-        const response = await axios.get(`${BASE_URL}/api/project/getProjectByCategory?category=${category}`);
-        setProjects(response.data.data);
-      } catch (error) {
-        console.error("Error fetching projects:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProjects();
+  const fetchProjects = useCallback(async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/api/project/getProjectByCategory?category=${category}`);
+      setProjects(response.data.data);
+    } catch (error) {
+      console.error("Error fetching projects:", error);
+    } finally {
+      setLoading(false);
+    }
   }, [category]);
+
+  useEffect(() => {
+    setLoading(true);
+    fetchProjects();
+  }, [fetchProjects]);
 
   if (loading) {
     return (
